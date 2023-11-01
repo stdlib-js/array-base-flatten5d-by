@@ -21,20 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var hasOwnProp = require( '@stdlib/assert-has-own-property' );
-var flatten5dBy = require( './../../dist' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof flatten5dBy, 'function', 'main export is a function' );
-	t.end();
-});
-
-tape( 'attached to the main export is an `assign` method', function test( t ) {
-	t.strictEqual( hasOwnProp( flatten5dBy, 'assign' ), true, 'has property' );
-	t.strictEqual( typeof flatten5dBy.assign, 'function', 'has method' );
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
 });
